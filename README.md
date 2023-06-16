@@ -53,9 +53,9 @@
         $[f(x)]^2 = \displaystyle \sum_{n=0}^{\infty}c_{n+1}x^n=\frac{1}{x}\displaystyle \sum_{n=0}^{\infty}c_{n+1}x^{n+1}=\frac{1}{x}\displaystyle \sum_{n=1}^{\infty}c_{n}x^{n}=\frac{1}{x}[f(x)-1]$
         $\Rightarrow x[f(x)]^2 - f(x) + 1 = 0 \Rightarrow f(x)=\frac{1\pm \sqrt{1-4x}}{2x}$
         Hệ số của $x^n$ trong $f(x)$ tương ứng với mỗi nghiệm, là:
-        $c_n = \pm \frac{1}{2} \bigg( \begin{array}{c} \frac{1}{2} \\ {n+1} \end{array} \bigg)(-4)^{n+1} = \pm \frac{1}{2} \frac{\frac{1}{2}(\frac{1}{2}-1)(\frac{1}{2}-2)...(\frac{1}{2}-n)}{(n+1)!}(-4)^{n+1}$
+        $c_n = \pm \frac{1}{2} \bigg(  \frac{1}{2} , {n+1} \bigg)(-4)^{n+1} = \pm \frac{1}{2} \frac{\frac{1}{2}(\frac{1}{2}-1)(\frac{1}{2}-2)...(\frac{1}{2}-n)}{(n+1)!}(-4)^{n+1}$
         Ta chọn nghiệm $f(x)$ ứng với dấu - để hệ số này dương. Cuối cùng,
-        $c_n=\frac{1.2.3...(2n-1)(2n)}{2.4...(2n)}\frac{2^n}{n!(n+1)}=\frac{1}{n+1}\frac{(2n)!}{n!n!}=\frac{1}{n+1}\bigg(\begin{array}{c} 2n \\ n \end{array} \bigg)$
+        $c_n=\frac{1.2.3...(2n-1)(2n)}{2.4...(2n)}\frac{2^n}{n!(n+1)}=\frac{1}{n+1}\frac{(2n)!}{n!n!}=\frac{1}{n+1}\bigg( 2n , n  \bigg)$
 4. **Chương 9:** Phát biểu, chứng minh định lý **Léma** về đánh giá thuật toán **Euclid** tìm ước chung lớn nhất của hai số nguyên dương. Trình bày thuật toán **Euclid** tìm gcd(2023, 1984)
     1. Phát biểu
         (Định lý). Cho $a,b \in \mathbb{Z^+}, a,b \geq 2$. Số phép chia dùng trong thuật toán Euclid để tìm ước chung lớn nhất của a và b không quá 5 lần số chữ số của b
