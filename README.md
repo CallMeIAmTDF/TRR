@@ -60,7 +60,7 @@
     1. Phát biểu
         (Định lý). Cho $a,b \in \mathbb{Z^+}, a,b \geq 2$. Số phép chia dùng trong thuật toán Euclid để tìm ước chung lớn nhất của a và b không quá 5 lần số chữ số của b
     3. Chứng minh
-        Đặt $r_0=a$ và $r_1=b$, ta có
+        Đặt $r_0=a$ và $r_1=b$, ta có:
         $r_0 = r_1q_1 + r_2,(0 < r_2<r_1)$,
         $r_1 = r_2q_2 + r_3$ $,(0 < r_3<r_2)$,
         $r_2 = r_3q_3 + r_4$ $,(0 < r_4<r_3)$,
