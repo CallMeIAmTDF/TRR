@@ -16,12 +16,12 @@
     2. Giả sử $f(k) \leq 1 + log_2k$ đúng $\forall k=\overline{1,n}$. Xét thuật toán với n + 1. 
     Sau lần đầu tiên, $i = \left\lfloor \frac{n+1}{2} \right\rfloor$ nên $f(n+1) = 1 + f(\left\lfloor \frac{n+1}{2} \right\rfloor)$. 
     Mặt khác $1 \leq \frac{n+1}{2} \leq n$ nên $1 \leq \left\lfloor \frac{n+1}{2} \right\rfloor \leq n$
-    Suy ra, $f(\left\lfloor \frac{n+1}{2} \right\rfloor) \leq 1 + log_2\left\lfloor \frac{n+1}{2} \right\rfloor \leq 1 + log_2\frac{n+1}{2} = 1 + log_2(n+1)$
+    Suy ra, $f(\left\lfloor \frac{n+1}{2} \right\rfloor) \leq 1 + log_2\left\lfloor \frac{n+1}{2} \right\rfloor \leq 1 + log_2\frac{n+1}{2} =log_2(n+1)$
     Do đó, $f(n+1) \leq 1 + log_2(n+1) \in log_2(n)$. **Thuật toán có độ phức tạp Loga**
 
 2. **Chương 7**: Phát biểu, chứng minh công thức hàm **Euler phi** tìm các số nguyên dương nhỏ hơn $n$ và nguyên tố cùng nhau với $n$. Tìm $\Phi(1984)$
     1. Phát biểu
-        Cho số nguyên dương $n \geq 2$. Theo **định lý cơ bản của số học**, $n$ có phân tích $n = p_1^{e_1}p_2^{e_2}...p_k^{e_k}$ trong đó $p_i$ là số nguyên tố, $e_1 \in \mathbb{Z^+}, 1 \leq i \leq k$. Khi đó
+        Cho số nguyên dương $n \geq 2$. Theo **định lý cơ bản của số học**, $n$ có phân tích $n = p_1^{e_1}p_2^{e_2}...p_k^{e_k}$ trong đó $p_i$ là số nguyên tố, $e_i \in \mathbb{Z^+}, 1 \leq i \leq k$. Khi đó
         $\Phi(n) = n \displaystyle \prod_{i=1}^k(1-\frac{1}{p_i})$
     2. Chứng minh
         Với phân tích nguyên tố này của $n$, một số nguyên dương $m$ nguyên tố cùng nhau với $n$ nếu $p_i$ không là ước của m, $1 \leq i \leq k$. Trong các số m từ $1$ tới $n$ xét điều kiện 
@@ -29,7 +29,7 @@
         $N(\overline{c_1} \overline{c_2} ... \overline{c_k})= N_0 - N_1+N_2-N_3+....+(-1)^k N_k$ trong 
         *  $N_0=n$
         *  $N_1=\displaystyle \sum_{1 \leq i\leq k} N(c_i) = \displaystyle \sum_{1 \leq i\leq k}\left\lfloor \frac{n}{p_i} \right\rfloor = \displaystyle \sum_{1 \leq i\leq k}\frac{n}{p_i}$
-        *  $N(c_ic_j), 1 \leq i < j \leq k$, là số các số từ 1 tới n là bội của $p_i$ và $p_j$, tức là bội của $lcm(p_i,p_j)$. Mặt khác, $p_i, p_j$ là hai số nguyên tố cùng nhau, nên $lcm(p_i, p_j) = p_ip_j$. Suy ra $N(c_ic_j)=\left\lfloor \frac{n}{p_i}\right\rfloor=\frac{n}{p_ip_j}$
+        *  $N(c_ic_j), 1 \leq i < j \leq k$, là số các số từ 1 tới n là bội của $p_i$ và $p_j$, tức là bội của $lcm(p_i,p_j)$. Mặt khác, $p_i, p_j$ là hai số nguyên tố cùng nhau, nên $lcm(p_i, p_j) = p_ip_j$. Suy ra $N(c_ic_j)=\left\lfloor \frac{n}{p_ip_j}\right\rfloor=\frac{n}{p_ip_j}$
         $N_2 = \displaystyle \sum_{1 \leq i < j\leq k} N(c_ic_j)=\displaystyle \sum_{1 \leq i < j\leq k}\frac{n}{p_ip_j}$
         * Tương tự
             $N_3 = \displaystyle \sum_{1 \leq i < j < l\leq k} N(c_ic_jc_l) = \displaystyle \sum_{1 \leq i < j < l\leq k}\frac{n}{p_ip_jp_l},...$
@@ -62,10 +62,10 @@
     3. Chứng minh
         Đặt $r_0=a$ và $r_1=b$, ta có
         $r_0 = r_1q_1 + r_2,(0 < r_2<r_1)$
-        $r_1 = r_2q_2 + r_3,(0 < r_3<r_2)$
-        $r_2 = r_3q_3 + r_4,(0 < r_4<r_3)$
+        $r_1 = r_2q_2 + r_3$ $,(0 < r_3<r_2)$
+        $r_2 = r_3q_3 + r_4$ $,(0 < r_4<r_3)$
         $...................$
-        $r_{n-2} = r_{n-1}q_{n-1}+r_n,(0 < r_n < n_{n-1})$
+        $r_{n-2} = r_{n-1}q_{n-1}+r_n$ $,(0 < r_n < n_{n-1})$
         $r_{n-1}=r_nq_n$
         Khi đó, $gcd(a,b)=r_n$, là phần dư khác 0 cuối cùng, và thuật toán thực hiện n phép chia.
         Ta thấy, $q_i\geq1, \forall i=\overline{1,n}$. Riêng $q_n \geq 2$, vì $r_{n-1}=r_nq_n$ mà $0<r_n<r_{n-1}$. Như vậy
@@ -129,9 +129,14 @@
     * ...
     * j = 10, k = 1, 2, 3, ..., 9: in 9 lần
 
-    **Tổng số lần in: ** $0 + (0 + 1) + (0 + 1 + 2) + ... + (0 + 1 + 2 + ... + 9)$
+    **Tổng số lần in:** $0 + (0 + 1) + (0 + 1 + 2) + ... + (0 + 1 + 2 + ... + 9)$
     $= \displaystyle \sum_{i=0}^{9} (\displaystyle \sum_{j = 0}^{i}j)$
 * C2
+$\begin{cases}
+    1 \leq i \leq 10 \\
+    1 \leq j \leq i \\
+    1 \leq k \leq j-1
+\end{cases}$
 2. Bằng quy nạp, chứng minh $\displaystyle \sum_{i=1}^n\frac{1}{i(i+1)} = \frac{n}{n+1}$
 Xét khẳng định mở $S(n) = \displaystyle \sum_{i=1}^n\frac{1}{i(i+1)} = \frac{n}{n+1}$
 $S(1): \frac{1}{2}=\frac{1}{2}$ Đúng
@@ -190,7 +195,12 @@ Theo nguyên lý quy nạp, $S(n)$ đúng $\forall n \in \mathbb{Z^+}$
 ## Các thuật toán, công thức
 1. Giải hệ thức đệ quy
     <pre>
-    rsolve(<Phương trình>, <biểu thức cần giải>, <Số liệu cho trước>)
+    rsolve([Phương trình], [biểu thức cần giải], [Số liệu cho trước])
+    
+    from sympy import *
+    n = symbols('n')
+    a = symbols('a', cls=Function)
+    print(rsolve(a(n) - a(n-1) - 3, a(n), {a(0) : 3}))
     </pre>
 2. Chuyển số hệ b sang hệ 10
     <pre>
