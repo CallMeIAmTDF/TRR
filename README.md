@@ -61,21 +61,21 @@
         (Định lý). Cho $a,b \in \mathbb{Z^+}, a,b \geq 2$. Số phép chia dùng trong thuật toán Euclid để tìm ước chung lớn nhất của a và b không quá 5 lần số chữ số của b
     3. Chứng minh
         Đặt $r_0=a$ và $r_1=b$, ta có
-        $r_0 = r_1q_1 + r_2,(0 < r_2<r_1)$
-        $r_1 = r_2q_2 + r_3$ $,(0 < r_3<r_2)$
-        $r_2 = r_3q_3 + r_4$ $,(0 < r_4<r_3)$
-        $...................$
-        $r_{n-2} = r_{n-1}q_{n-1}+r_n$ $,(0 < r_n < n_{n-1})$
-        $r_{n-1}=r_nq_n$
+        $r_0 = r_1q_1 + r_2,(0 < r_2<r_1)$,
+        $r_1 = r_2q_2 + r_3$ $,(0 < r_3<r_2)$,
+        $r_2 = r_3q_3 + r_4$ $,(0 < r_4<r_3)$,
+        $...................$,
+        $r_{n-2} = r_{n-1}q_{n-1}+r_n$ $,(0 < r_n < n_{n-1})$,
+        $r_{n-1}=r_nq_n$.
         Khi đó, $gcd(a,b)=r_n$, là phần dư khác 0 cuối cùng, và thuật toán thực hiện n phép chia.
         Ta thấy, $q_i\geq1, \forall i=\overline{1,n}$. Riêng $q_n \geq 2$, vì $r_{n-1}=r_nq_n$ mà $0<r_n<r_{n-1}$. Như vậy
-        $r_n>0\Rightarrow r_n \geq 1 = F_2$
-        $r_{n-1}=r_nq_n\geq 1\cdot2=2=F_3$
-        $r_{n-2}=r_{n-1}q_{n-1}+r_n\geq F_3\cdot1+F_2 = F_4$
-        $r_{n-3}=r_{n-2}q_{n-2}+r_{n-1}\geq F_4\cdot1+F_3 = F_5$
-        $..........................$
-        $r_2=r_3q_3+r_4\geq F_{n-1}\cdot1+F_{n-2}=F_n$
-        $b=r_1=r_2q_2+r_3\geq F_n\cdot1+F_{n-1}=F_{n+1}$
+        $r_n>0\Rightarrow r_n \geq 1 = F_2$,
+        $r_{n-1}=r_nq_n\geq 1\cdot2=2=F_3$,
+        $r_{n-2}=r_{n-1}q_{n-1}+r_n\geq F_3\cdot1+F_2 = F_4$,
+        $r_{n-3}=r_{n-2}q_{n-2}+r_{n-1}\geq F_4\cdot1+F_3 = F_5$,
+        $..........................$,
+        $r_2=r_3q_3+r_4\geq F_{n-1}\cdot1+F_{n-2}=F_n$,
+        $b=r_1=r_2q_2+r_3\geq F_n\cdot1+F_{n-1}=F_{n+1}$.
         Dẫn đến
         $b \geq F_{n+1}>\alpha^{(n+1)-2}=\alpha^{n-1}$
         $\Rightarrow n-1 < log_\alpha b = log_\alpha10\cdot log_{10}b=4.784971log_{10}b<5log_{10}b$
